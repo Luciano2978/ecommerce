@@ -14,7 +14,9 @@ export default function Footer(){
                         <Nav className="me-auto">
                         </Nav>
                         <Nav>
-                            <Navbar.Brand href="https://www.instagram.com/luciano.rojas.29/" target="_blank"><i class="fa-brands fa-instagram"></i>{' '}</Navbar.Brand>
+                            <Navbar.Brand target="_blank">Puedes Buscarnos en</Navbar.Brand>
+                            <Navbar.Brand href="https://www.instagram.com/luciano.rojas.29/" target="_blank"><i className="fa-brands fa-instagram"></i>{' '}</Navbar.Brand>
+                            <Navbar.Brand href="/" target="_blank"><i className="fa-brands fa-facebook"></i>{' '}</Navbar.Brand>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
