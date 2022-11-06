@@ -11,6 +11,7 @@ import { fs } from "../Services/Firebase";
 export default function AuthContext(props){
 
     const {children} = props;
+    const [estadoAdmin, setEstadoAdmin] = useState(false);
     //registrar
 
     const regUsuario = (email,password) => {
@@ -34,8 +35,6 @@ export default function AuthContext(props){
     const desconectar = () => {
         return signOut(auth);
     };
-
- 
 
 
     const [user,setUser] = useState(null);
@@ -79,14 +78,27 @@ export default function AuthContext(props){
         const q = query(collection(fs, "usuario"), where("Email", "==", email));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((document) => {
-            console.log(document.id);
             const idDocumento = document.id;
             updateDoc(doc(fs,"usuario",idDocumento),{
                 Conectado: estado
             })
+        
         });
     }
 
+    const modoAdmin = async (email,estado) => {
+        const qAdmin = query(collection(fs, "usuario"), where("Admin", "==", true));
+        const querySnapAdmin = await getDocs(qAdmin);
+        const qEmail = query(collection(fs, "usuario"), where("Email", "==", email));
+        const querySnapEmail = await getDocs(qEmail);
+        querySnapAdmin.forEach((documentAdmin) => {
+            querySnapEmail.forEach((documentEmail) => {
+                if (documentAdmin.id == documentEmail.id ){
+                    setEstadoAdmin(estado);
+                }
+            });
+        });
+    }
 
 
 
@@ -100,6 +112,8 @@ export default function AuthContext(props){
                 desconectar,
                 regUserDatos,
                 actualizarEstado,
+                modoAdmin,
+                estadoAdmin,
                 user,
 
                 

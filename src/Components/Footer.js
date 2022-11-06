@@ -8,7 +8,7 @@ export default function Footer(){
         <>
             <Navbar collapseOnSelect bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">Copyright Grupo 4 + Samuel 2022</Navbar.Brand>
+                    <Navbar.Brand href="/">Copyright Grupo 4 2022</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
