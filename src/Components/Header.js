@@ -108,10 +108,11 @@ export default function Header(props){
                                 )}
                                 
                                 {/* <Nav.Link href="#verCarrito"><i className="fa-solid fa-cart-shopping"></i>{'   '}Carrito</Nav.Link> */}
+                                {/* Soporte */}
                                 {estadoAdmin ? (
                                     <p></p>
                                 ) : (
-                                <Nav.Link href="/"><i className="fa-solid fa-headset"></i>{'   '}Soporte</Nav.Link>
+                                <Nav.Link href="/Soporte"><i className="fa-solid fa-headset"></i>{'   '}Soporte</Nav.Link>
                                 )}
                                 {user ? ( 
                                     <Nav.Link href="/" ><i className="fa-solid fa-house"></i>{" "}{user.email}</Nav.Link>
