@@ -8,7 +8,6 @@ export default function FirestoreContext(props){
 
     const { children } = props;
     const [ clientes, setClientes ] = useState([]);
-
     const registro = async  (NombreProduc, Cantidad, FotoProduct, Precio, Value) => {
         await addDoc(collection(fs, "Productos"), {
           NombreProduc: NombreProduc,
@@ -45,6 +44,9 @@ export default function FirestoreContext(props){
 
 
 
+   
+
+
 
 
 
@@ -55,7 +57,9 @@ export default function FirestoreContext(props){
                 modificar,
                 eliminar,
                 lstClientes,
-                clientes
+                clientes,
+
+                
                 
         
             }}>
